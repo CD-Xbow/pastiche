@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
 const STYLE_PRESETS = [
-  { label: "None", value: "" },
+  { label: "None", value: "none" },
   { label: "Photorealistic", value: "photorealistic, 8k, highly detailed, professional photography" },
   { label: "Oil Painting", value: "oil painting, classical art style, rich colors, textured brushstrokes" },
   { label: "Watercolor", value: "watercolor painting, soft colors, flowing, artistic" },
@@ -29,7 +29,7 @@ const SIZE_PRESETS = [
 
 export const ImageGenerator = () => {
   const [prompt, setPrompt] = useState("");
-  const [selectedStyle, setSelectedStyle] = useState("");
+  const [selectedStyle, setSelectedStyle] = useState("none");
   const [selectedSize, setSelectedSize] = useState("square");
   const [seed, setSeed] = useState("");
   const [removeLogo, setRemoveLogo] = useState(true);
@@ -44,7 +44,7 @@ export const ImageGenerator = () => {
 
     setIsGenerating(true);
     try {
-      const fullPrompt = selectedStyle 
+      const fullPrompt = selectedStyle && selectedStyle !== "none"
         ? `${prompt}, ${selectedStyle}${removeLogo ? ', no text, no watermarks, no logos' : ''}`
         : `${prompt}${removeLogo ? ', no text, no watermarks, no logos' : ''}`;
 
