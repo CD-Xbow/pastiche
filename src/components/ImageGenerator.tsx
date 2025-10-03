@@ -16,12 +16,9 @@ export const ImageGenerator = () => {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-          AI Image Studio
+        <h1 className="text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          Pastiche AI Studio
         </h1>
-        <p className="text-muted-foreground">
-          Create stunning images from text or edit existing images with AI
-        </p>
       </div>
 
       <Tabs defaultValue="generate" className="w-full">
