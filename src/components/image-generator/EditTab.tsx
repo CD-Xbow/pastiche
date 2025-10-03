@@ -4,7 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Loader2, Upload, Wand2 } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Loader2, Upload, Wand2, HelpCircle } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { STYLE_PRESETS } from "./StylePresets";
@@ -114,7 +115,17 @@ export const EditTab = ({ onImageGenerated }: EditTabProps) => {
       </div>
 
       <div>
-        <Label htmlFor="edit-prompt" className="text-foreground">Edit Instructions</Label>
+        <div className="flex items-center gap-2 mb-2">
+          <Label htmlFor="edit-prompt" className="text-foreground">Edit Instructions</Label>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Describe changes like "add sunset" or "change to winter scene"</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
         <Textarea
           id="edit-prompt"
           placeholder="Describe what you want to change (e.g., 'add a sunset', 'make it look like a watercolor', 'change background to a forest')"
@@ -125,7 +136,17 @@ export const EditTab = ({ onImageGenerated }: EditTabProps) => {
       </div>
 
       <div>
-        <Label htmlFor="edit-style" className="text-foreground">Style Transfer (Optional)</Label>
+        <div className="flex items-center gap-2 mb-2">
+          <Label htmlFor="edit-style" className="text-foreground">Style Transfer (Optional)</Label>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Transform your image to match a specific artistic style</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
         <Select value={selectedStyle} onValueChange={setSelectedStyle}>
           <SelectTrigger id="edit-style" className="mt-2 bg-background/50 border-border">
             <SelectValue placeholder="Apply a style" />

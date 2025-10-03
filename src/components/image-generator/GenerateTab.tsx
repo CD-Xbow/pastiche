@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Loader2, Sparkles } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Loader2, Sparkles, HelpCircle } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { STYLE_PRESETS, SIZE_PRESETS } from "./StylePresets";
@@ -75,7 +76,17 @@ export const GenerateTab = ({ onImageGenerated }: GenerateTabProps) => {
       </div>
 
       <div>
-        <Label htmlFor="style" className="text-foreground">Style Preset</Label>
+        <div className="flex items-center gap-2 mb-2">
+          <Label htmlFor="style" className="text-foreground">Style Preset</Label>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Apply a visual style to your image (photographic, artistic, etc.)</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
         <Select value={selectedStyle} onValueChange={setSelectedStyle}>
           <SelectTrigger id="style" className="mt-2 bg-background/50 border-border">
             <SelectValue placeholder="Choose a style" />
@@ -107,7 +118,17 @@ export const GenerateTab = ({ onImageGenerated }: GenerateTabProps) => {
       </div>
 
       <div>
-        <Label htmlFor="seed" className="text-foreground">Seed (Optional)</Label>
+        <div className="flex items-center gap-2 mb-2">
+          <Label htmlFor="seed" className="text-foreground">Seed (Optional)</Label>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Use the same seed number to reproduce similar results</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
         <Input
           id="seed"
           type="number"
