@@ -1,8 +1,45 @@
-# Welcome to your Lovable project
+# Welcome to Pastiche AI Studio
 
 ## Project info
 
+AI Image generator and modifier
+
 **URL**: https://lovable.dev/projects/a977e6d2-930a-449a-b90c-06cc93228451
+
+## Getting Started
+Pastiche AI Studio offers two powerful modes for creating stunning images:
+
+### Generate: Create images from text descriptions
+Edit Image: Upload an image and transform it with AI
+
+- Photographic Styles
+- Artistic Styles
+- Printing Styles
+- Drawing Styles
+- Cartoon Styles
+
+## Image Editing Tips
+Style Transfer
+Upload an image and describe a style (e.g., "make it look like a watercolor painting") to transform it while keeping the original composition.
+
+## Adding Elements
+Describe what you want to add (e.g., "add a sunset in the background" or "put the person in a futuristic city") to enhance your uploaded image.
+
+## Image Variations
+Use prompts like "create a variation of this image" or "reimagine this scene" to generate creative alternatives based on your upload.
+
+## Best Practices
+- Be Specific
+- Detailed prompts yield better results. Include subject, setting, style, mood, and lighting.
+
+## Use Style Presets
+- Select a style preset to give the AI clear direction about the aesthetic you want.
+
+## Experiment
+- Try different prompts and styles. Small wording changes can produce very different results.
+
+## Image Quality
+- For editing mode, upload high-quality images for best results. Supported formats: JPG, PNG, WebP
 
 ## How can I edit this code?
 
